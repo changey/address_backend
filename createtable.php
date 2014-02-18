@@ -8,73 +8,56 @@ mysql_query($query, $con) or die (mysql_error($con));
 $query = '
         CREATE TABLE rnmembers (
         id            INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
-        user          VARCHAR(16)       NOT NULL,
+        user          VARCHAR(255)       NOT NULL,
         pass          VARCHAR(255)       NOT NULL,
         name          VARCHAR(255)       NOT NULL,
         email         VARCHAR(255)       NOT NULL,
 
         PRIMARY KEY (id)
     ) 
+	CHARACTER SET = utf8
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
 
-$query = 'DROP TABLE IF EXISTS devices';
+$query = 'DROP TABLE IF EXISTS groups';
 mysql_query($query, $con) or die (mysql_error($con));
 //create the table
 $query = '
-        CREATE TABLE devices (
-        id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
-        token        VARCHAR(255)      NOT NULL,
-        userid       VARCHAR(255)      NOT NULL,
+        CREATE TABLE groups (
+        id               INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
+        name             VARCHAR(255)      NOT NULL,
+        thumbnail        VARCHAR(255)      NOT NULL,
+        intro            VARCHAR(255)      NOT NULL,
+        location         VARCHAR(255)      NOT NULL,
+        membersCount     INT               NOT NULL,
 
         PRIMARY KEY (id)
     ) 
+	CHARACTER SET = utf8
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
 
-$query = 'DROP TABLE IF EXISTS tbl_images';
+
+
+
+$query = 'DROP TABLE IF EXISTS contacts';
 mysql_query($query, $con) or die (mysql_error($con));
 //create the table
 $query = '
-        CREATE TABLE tbl_images (
-        id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
-        url          VARCHAR(255)      NOT NULL,
-
+        CREATE TABLE contacts (
+        id                INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
+        name              VARCHAR(255)      NOT NULL,
+        groupId           INT               NOT NULL,
+        sectionNumber     INT               NOT NULL,
+        email             VARCHAR(255)      NOT NULL,
+        tel               VARCHAR(255)      NOT NULL,
+        thumbnail         VARCHAR(255)      NOT NULL,
+        school            VARCHAR(255)      NOT NULL,
+        work              VARCHAR(255)      NOT NULL,
+ 
         PRIMARY KEY (id)
     ) 
-    ENGINE=MyISAM';
-mysql_query($query, $con) or die (mysql_error($con));
-
-$query = 'DROP TABLE IF EXISTS messages';
-mysql_query($query, $con) or die (mysql_error($con));
-//create the table
-$query = '
-        CREATE TABLE messages (
-        id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
-        sender          VARCHAR(255)      NOT NULL,
-        receiver        VARCHAR(255)      NOT NULL,
-        url             VARCHAR(255)      NOT NULL,
-        time            VARCHAR(255)      NOT NULL,
-        captions        VARCHAR(255)      NOT NULL,
-        number          VARCHAR(255)      NOT NULL,
-        due             VARCHAR(255)      NOT NULL,
-
-        PRIMARY KEY (id)
-    ) 
-    ENGINE=MyISAM';
-mysql_query($query, $con) or die (mysql_error($con));
-
-$query = 'DROP TABLE IF EXISTS friends';
-mysql_query($query, $con) or die (mysql_error($con));
-//create the table
-$query = '
-        CREATE TABLE friends (
-        id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
-        user            VARCHAR(255)      NOT NULL,
-        friend          VARCHAR(255)      NOT NULL,
-
-        PRIMARY KEY (id)
-    ) 
+	CHARACTER SET = utf8
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
 
