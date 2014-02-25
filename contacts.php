@@ -2,11 +2,12 @@
 
 $user = $_GET['user'];
 $friend = $_GET['friend'];
+$groupId = $_GET['groupId'];
 
 include_once 'config.php';
 
 //$query = "SELECT * FROM groups WHERE receiver='$user' ORDER BY id DESC";
-$query = "SELECT * FROM groups WHERE 1=1";
+$query = "SELECT * FROM contacts WHERE groupId='$groupId' ";
 // if (mysql_num_rows(mysql_query($query)) == 0) {
 	// //$error = "That username already exists<br /><br />";
 	// echo 0;
