@@ -1,14 +1,9 @@
 <?php
 
-$message = $_POST['message'];
-$sender =$_POST['sender'];
-$receiver =$_POST['receiver'];
-$time =$_POST['time'];
-$url =$_POST['url'];
-$messages_number=$_POST['messages_number'];
-$receiver_number=$_POST['receiver_number'];
+$groupName = $_POST['groupName'];
+$groupIntro =$_POST['groupIntro'];
 echo $messages_number;
-
+$target_path="";
 //$message='trial';
 // connect to MySQL//  $db = mysql_connect('127.0.0.1', 'root2','root') or//      die ('Unable to connect. Check your connection parameters.');
 include_once 'config.php';
@@ -37,9 +32,8 @@ if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
 		// Create the query and insert
 		// into our database.
 		
-		
 		$query = "INSERT INTO tbl_images ";
-		$query .= "(url) VALUES ('http://10.0.2.45/startup/uploads/$file_number.jpg')";
+		$query .= "(url) VALUES ('http://54.200.250.29/startup/uploads/$file_number.jpg')";
 		$results = mysql_query($query, $con);
 
 		// Print results
@@ -49,7 +43,7 @@ if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
 	}
 	
 	$myparam = $_POST['image'];     //getting image Here
-   $mytextLabel= $_POST['filenames'];   //getting textLabe Here
+    $mytextLabel= $_POST['filenames'];   //getting textLabe Here
    echo $myparam;
    echo $mytextLabel; 
 
@@ -61,6 +55,11 @@ if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
 
 	if (move_uploaded_file($_FILES['image']['tmp_name'], $target_path)) {
 		echo "The file " . basename($_FILES['image']['name']) . " has been uploaded";
+		
+		echo $groupName;
+		$query = "INSERT INTO groups (name, intro, thumbnail) VALUES ('$groupName', '$groupIntro', '$target_path')";
+		mysql_query($query) or die(mysql_error($con));
+		//echo "\ngroup created successfully";
 		//echo "http://107.22.99.26/startup/uploads/$file_number.jpg";
 		
 	} else {
@@ -68,22 +67,7 @@ if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
 	}
 
 }
-  $receiver_number_i=intval($receiver_number);
-
-  $messages_number_i=intval($messages_number);
-  echo $messages_number_i;
-  echo $receiver_number_i;
   
-  for($i=0;$i<$receiver_number_i;$i++){
-  	$messages_number_i=$messages_number_i+1;
-
-  $query = "UPDATE messages SET url='http://107.22.99.26/startup/uploads/$file_number.jpg' WHERE id=$messages_number_i";
-// if (mysql_num_rows(mysql_query($query)) == 0) {
-	// //$error = "That username already exists<br /><br />";
-	// echo 0;
-// } else {
-	$result = mysql_query($query) or die(mysql_error($con));
-  }
 	//echo $result;
 	// if (!$result) {
 		// die("Query to show fields from table failed");

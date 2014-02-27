@@ -5,7 +5,7 @@ $mysql_user = "root";
 $mysql_password = "";*/
 $mysql_hostname = "127.0.0.1";
 $mysql_user = "root";
-$mysql_password = "address";
+//$mysql_password = "address";
 $mysql_database = "social";
 $con = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) 
 or die("Can't connect to database");

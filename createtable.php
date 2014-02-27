@@ -37,9 +37,6 @@ $query = '
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
 
-
-
-
 $query = 'DROP TABLE IF EXISTS contacts';
 mysql_query($query, $con) or die (mysql_error($con));
 //create the table
@@ -58,6 +55,20 @@ $query = '
         PRIMARY KEY (id)
     ) 
 	CHARACTER SET = utf8
+    ENGINE=MyISAM';
+mysql_query($query, $con) or die (mysql_error($con));
+
+$query = 'DROP TABLE IF EXISTS tbl_images';
+mysql_query($query, $con) or die (mysql_error($con));
+//create the table
+$query = '
+        CREATE TABLE tbl_images (
+        id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
+        groupId      INT               NOT NULL,
+        url          VARCHAR(255)      NOT NULL,
+
+        PRIMARY KEY (id)
+    ) 
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
 
