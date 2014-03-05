@@ -7,10 +7,10 @@ include_once 'config.php';
 $query = "INSERT INTO rnmembers (user, pass) VALUES('a', 'c4ca4238a0b923820dcc509a6f75849b')";
 			mysql_query($query);
 			
-$query = "INSERT INTO groups (name, thumbnail, intro) VALUES('MIT', 'foo', 'bar')";
+$query = "INSERT INTO groups (name, thumbnail, intro) VALUES('MIT', 'uploads/4.jpg', 'bar')";
 			mysql_query($query);
 			
-$query = "INSERT INTO groups (name, thumbnail, intro) VALUES('foo', '', '')";
+$query = "INSERT INTO groups (name, thumbnail, intro) VALUES('foo', 'uploads/4.jpg', 'baz')";
 			mysql_query($query);
 			
 $query = "INSERT INTO contacts (name, groupId, sectionNumber) VALUES('David Zhu', 1, 0)";
