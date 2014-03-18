@@ -7,7 +7,7 @@ $groupId = $_GET['groupId'];
 include_once 'config.php';
 
 //$query = "SELECT * FROM groups WHERE receiver='$user' ORDER BY id DESC";
-$query = "SELECT * FROM contacts WHERE groupId='$groupId' ";
+$query = "SELECT * FROM contacts WHERE groupId='$groupId' ORDER BY name";
 // if (mysql_num_rows(mysql_query($query)) == 0) {
 	// //$error = "That username already exists<br /><br />";
 	// echo 0;
@@ -22,7 +22,8 @@ $query = "SELECT * FROM contacts WHERE groupId='$groupId' ";
 	while ($row = mysql_fetch_row($result)) {
 		//$user_id = $row[2];
 		//$data = array("id" => $row[0], "sender" => $row[1], "receiver" => $row[2], "url" => $row[3], "time" => $row[4], "captions" => $row[5]);
-		$data = array("id" => $row[0], "name" => urlencode($row[1]), "thumbnail" => $row[2]);
+		$data = array("id" => $row[0], "name" => urlencode($row[1]), "email" => $row[4]
+		, "tel" => $row[5], "thumbnail" => $row[6], "university" => $row[7], "job" => $row[8]);
 		
 		array_push($stack, $data);
 		//echo $user_id;

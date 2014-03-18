@@ -10,26 +10,14 @@ $groupId = $_POST['groupId'];
 $contacts_str = $_POST['contacts'];
 //echo $contacts_str;
 $contacts = explode(',', $contacts_str);
-//echo $contacts[0];
-//$email = $_GET['email'];
-// if ($name == "") {
-	// echo 0;
-	// }
-// else{
-// $query = "SELECT * FROM contacts WHERE user='$user'";
+$length = count($contacts);
 
-
-$query = "SELECT * FROM contacts WHERE 1=2";
-		if (mysql_num_rows(mysql_query($query))) {
-			//$error = "That username already exists<br /><br />";
-			echo 0;
-		} else {
-			$query = "INSERT INTO contacts (name, groupId) VALUES('$name', 1)";
+for ($i=0; $i<$length; $i++) {
+	$name = $contacts[$i];
+	echo $name;
+	$query = "INSERT INTO contacts (name, groupId) VALUES('$name', '$groupId')";
 			mysql_query($query);
-			echo 1;
-			//header("Location: index2.php");
-		}
-//}
+}
 		
 
 mysql_close($con);

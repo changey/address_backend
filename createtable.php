@@ -51,6 +51,7 @@ $query = '
         thumbnail         VARCHAR(255)      NOT NULL,
         school            VARCHAR(255)      NOT NULL,
         work              VARCHAR(255)      NOT NULL,
+        gender            VARCHAR(255)      NOT NULL,
  
         PRIMARY KEY (id)
     ) 
@@ -71,6 +72,21 @@ $query = '
     ) 
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
+
+$query = 'DROP TABLE IF EXISTS admin';
+mysql_query($query, $con) or die (mysql_error($con));
+//create the table
+$query = '
+        CREATE TABLE admin (
+        id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
+        groupId      INT               NOT NULL,
+        userId       VARCHAR(255)      NOT NULL,
+
+        PRIMARY KEY (id)
+    ) 
+    ENGINE=MyISAM';
+mysql_query($query, $con) or die (mysql_error($con));
+
 
 
 echo 'Database successfully created!';
