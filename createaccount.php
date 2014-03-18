@@ -14,28 +14,28 @@ $query = "INSERT INTO groups (name, thumbnail, intro) VALUES('class', 'uploads/4
 			mysql_query($query);
 			
 $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender) VALUES('David Zhu', 1, 0, 'david@inspero.com', '(617)425-2323', 'contact_pics/c1.png', 'MIT',
-          'McKinsey', 'Male')";
+          work, gender) VALUES('Wanni Ninja', 1, 0, 'wanni@pik.com', '(617)425-2323', 'contact_pics/c1.png', 'MIT',
+          'McKinsey', 'Female')";
 			mysql_query($query);
 
 $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender) VALUES('Tingting Sha', 1, 0, 'tingting@inspero.com', '(617)425-2323', 'contact_pics/c3.png', 'MIT',
+          work, gender) VALUES('Dianasaur', 1, 0, 'diana@pik.com', '(617)425-2323', 'contact_pics/c2.png', 'MIT',
           'McKinsey', 'Female')";
 			mysql_query($query);
 			
 $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender) VALUES('Max Wu', 1, 0, 'max@inspero.com', '(617)425-2323', 'contact_pics/c2.png', 'MIT',
+          work, gender) VALUES('Eric', 1, 0, 'eric@pik.com', '(617)425-2323', 'contact_pics/c3.png', 'MIT',
           'Intel', 'Male')";
 			mysql_query($query);
 			
 $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender) VALUES('Shuo Wang', 2, 0, 'shuo@inspero.com', '(617)425-2323', 'http://', 'MIT',
+          work, gender) VALUES('Wanni', 2, 0, 'wanni@pik.com', '(617)425-2323', 'contact_pics/c1.png', 'MIT',
           'McKinsey', 'Female')";
 			mysql_query($query);
 			
 $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender) VALUES('Eric Chang', 2, 0, 'eric@inspero.com', '(617)425-2323', 'http://', 'MIT',
-          'McKinsey', 'Male')";
+          work, gender) VALUES('Diana', 2, 0, 'diana@pik.com', '(617)425-2323', 'contact_pics/c2.png', 'MIT',
+          'McKinsey', 'Female')";
 			mysql_query($query);//make sure you're using the correct database//mysql_select_db('devices', $db) or die(mysql_error($db));
 
 echo 'Data inserted successfully!';
