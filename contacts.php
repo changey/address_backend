@@ -1,13 +1,17 @@
 <?php
 
-$user = $_GET['user'];
+$userId = $_GET['userId'];
 $friend = $_GET['friend'];
 $groupId = $_GET['groupId'];
 
 include_once 'config.php';
 
 //$query = "SELECT * FROM groups WHERE receiver='$user' ORDER BY id DESC";
-$query = "SELECT * FROM contacts WHERE groupId='$groupId' ORDER BY name";
+$query = "SELECT * 
+          FROM contacts 
+          INNER JOIN favorites
+          ON contacts.id = favorites.contactId
+          WHERE groupId='$groupId' AND favorites.userId = '$userId' ORDER BY name";
 // if (mysql_num_rows(mysql_query($query)) == 0) {
 	// //$error = "That username already exists<br /><br />";
 	// echo 0;

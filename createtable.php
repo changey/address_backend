@@ -87,6 +87,21 @@ $query = '
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
 
+$query = 'DROP TABLE IF EXISTS favorites';
+mysql_query($query, $con) or die (mysql_error($con));
+//create the table
+$query = '
+        CREATE TABLE favorites (
+        id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
+        contactId    INT               NOT NULL,
+        userId       INT               NOT NULL,
+        favorites    INT               NOT NULL,
+
+        PRIMARY KEY (id)
+    ) 
+    ENGINE=MyISAM';
+mysql_query($query, $con) or die (mysql_error($con));
+
 
 
 echo 'Database successfully created!';

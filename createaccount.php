@@ -36,6 +36,15 @@ $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbn
 $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
           work, gender) VALUES('Eric Chang', 2, 0, 'eric@inspero.com', '(617)425-2323', 'http://', 'MIT',
           'McKinsey', 'Male')";
+			mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, userId, favorites) VALUES(1, 1, 1)";
+			mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, userId, favorites) VALUES(2, 1, 0)";
+			mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, userId, favorites) VALUES(3, 1, 0)";
 			mysql_query($query);//make sure you're using the correct database//mysql_select_db('devices', $db) or die(mysql_error($db));
 
 echo 'Data inserted successfully!';
