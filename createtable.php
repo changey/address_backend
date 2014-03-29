@@ -94,7 +94,8 @@ $query = '
         CREATE TABLE favorites (
         id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
         contactId    INT               NOT NULL,
-        userId       INT               NOT NULL,
+        groupId      INT               NOT NULL,
+        user         VARCHAR(255)      NOT NULL,
         favorites    INT               NOT NULL,
 
         PRIMARY KEY (id)

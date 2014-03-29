@@ -38,13 +38,13 @@ $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbn
           'McKinsey', 'Male')";
 			mysql_query($query);
 
-$query = "INSERT INTO favorites (contactId, userId, favorites) VALUES(1, 1, 1)";
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(1, 1, 'a', 1)";
 			mysql_query($query);
 
-$query = "INSERT INTO favorites (contactId, userId, favorites) VALUES(2, 1, 0)";
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(2, 1, 'a', 0)";
 			mysql_query($query);
 
-$query = "INSERT INTO favorites (contactId, userId, favorites) VALUES(3, 1, 0)";
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(3, 1, 'a', 0)";
 			mysql_query($query);//make sure you're using the correct database//mysql_select_db('devices', $db) or die(mysql_error($db));
 
 echo 'Data inserted successfully!';
