@@ -87,7 +87,37 @@ $query = '
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
 
+$query = 'DROP TABLE IF EXISTS favorites';
+mysql_query($query, $con) or die (mysql_error($con));
+//create the table
+$query = '
+        CREATE TABLE favorites (
+        id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
+        contactId    INT               NOT NULL,
+        groupId      INT               NOT NULL,
+        user         VARCHAR(255)      NOT NULL,
+        favorites    INT               NOT NULL,
 
+        PRIMARY KEY (id)
+    ) 
+    ENGINE=MyISAM';
+mysql_query($query, $con) or die (mysql_error($con));
+
+$query = 'DROP TABLE IF EXISTS message';
+mysql_query($query, $con) or die (mysql_error($con));
+//create the table
+$query = '
+        CREATE TABLE message (
+        id            INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
+        message       VARCHAR(255)       NOT NULL,
+        hashtag       VARCHAR(255)       NOT NULL,
+        time          VARCHAR(255)       NOT NULL,
+
+        PRIMARY KEY (id)
+    ) 
+	CHARACTER SET = utf8
+    ENGINE=MyISAM';
+mysql_query($query, $con) or die (mysql_error($con));
 
 echo 'Database successfully created!';
 ?>
