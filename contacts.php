@@ -1,6 +1,6 @@
 <?php
 
-$userId = $_GET['userId'];
+$user = $_GET['user'];
 $friend = $_GET['friend'];
 $groupId = $_GET['groupId'];
 
@@ -11,7 +11,7 @@ $query = "SELECT *
           FROM contacts 
           INNER JOIN favorites
           ON contacts.id = favorites.contactId
-          WHERE groupId='$groupId' AND favorites.userId = '$userId' ORDER BY name";
+          WHERE contacts.groupId='$groupId' AND favorites.user = '$user' ORDER BY favorites DESC, name";
 // if (mysql_num_rows(mysql_query($query)) == 0) {
 	// //$error = "That username already exists<br /><br />";
 	// echo 0;
@@ -28,7 +28,7 @@ $query = "SELECT *
 		//$data = array("id" => $row[0], "sender" => $row[1], "receiver" => $row[2], "url" => $row[3], "time" => $row[4], "captions" => $row[5]);
 		$data = array("id" => $row[0], "name" => urlencode($row[1]), "email" => $row[4]
 		, "tel" => $row[5], "thumbnail" => $row[6], "university" => $row[7], "job" => $row[8], 
-		"gender" => $row[9], "favorites" => $row[13]);
+		"gender" => $row[9], "favorites" => $row[14]);
 		
 		array_push($stack, $data);
 		//echo $user_id;
