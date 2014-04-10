@@ -29,6 +29,8 @@ $query = '
         thumbnail        VARCHAR(255)      NOT NULL,
         intro            VARCHAR(255)      NOT NULL,
         location         VARCHAR(255)      NOT NULL,
+        tagString        VARCHAR(255)      NOT NULL,
+        hashtag          VARCHAR(255)      NOT NULL,
         membersCount     INT               NOT NULL,
 
         PRIMARY KEY (id)
@@ -52,6 +54,8 @@ $query = '
         school            VARCHAR(255)      NOT NULL,
         work              VARCHAR(255)      NOT NULL,
         gender            VARCHAR(255)      NOT NULL,
+        tagString        VARCHAR(255)      NOT NULL,
+        hashtag          VARCHAR(255)      NOT NULL,
  
         PRIMARY KEY (id)
     ) 

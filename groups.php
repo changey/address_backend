@@ -21,7 +21,7 @@ $query = "SELECT * FROM groups WHERE 1=1";
 	while ($row = mysql_fetch_row($result)) {
 		//$user_id = $row[2];
 		//$data = array("id" => $row[0], "sender" => $row[1], "receiver" => $row[2], "url" => $row[3], "time" => $row[4], "captions" => $row[5]);
-		$data = array("id" => $row[0], "name" => urlencode($row[1]), "thumbnail" => $row[2]);
+		$data = array("id" => $row[0], "name" => urlencode($row[1]), "thumbnail" => $row[2], "tagString" => $row[5]);
 		
 		array_push($stack, $data);
 		//echo $user_id;
@@ -38,9 +38,6 @@ $query = "SELECT * FROM groups WHERE 1=1";
 	//header("Location: index2.php");
 
 // }
-
-// $query = "INSERT INTO friends (user, friend_id) VALUES('changey', 'heather')";
-// mysql_query($query);
 
 //make sure you're using the correct database
 //mysql_select_db('devices', $db) or die(mysql_error($db));
