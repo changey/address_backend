@@ -1,0 +1,22 @@
+[
+  {"name": "Pikachu",
+  "groupId": 1,
+  "sectionNumber": 0,
+  "email": "a@inspero.com",
+  "tel": "(425)234-2342",
+  "thumbnail": "",
+  "school": "Stanford",
+  "work": "Google",
+  "gender": "Male",
+  "tagString": "#pokemon #finance"},
+  {"name": "Pikachu",
+  "groupId": 1,
+  "sectionNumber": 0,
+  "email": "a@inspero.com",
+  "tel": "(425)234-2342",
+  "thumbnail": "",
+  "school": "Stanford",
+  "work": "Google",
+  "gender": "Male",
+  "tagString": "#pokemon #finance"}
+]
