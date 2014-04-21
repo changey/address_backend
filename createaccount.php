@@ -20,28 +20,28 @@ $query = "INSERT INTO groups (name, thumbnail, intro, tagString)
 			VALUES('Harvard', 'uploads/4.jpg', 'bar', '#college #easyA')";
 			mysql_query($query);
 			
-$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender, tagString) VALUES('Tingting Sha', 1, 0, 'tingting@pik.com', '(617)425-2323', 'contact_pics/c5.png', 'MIT',
-          'McKinsey', 'Female', '#awesome #MIT')";
+$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
+          job, gender, tagString) VALUES('Tingting Sha', 1, 0, 'tingting@inspero.com', '(617)425-2323', 'contact_pics/c5.png', 'PhD, Washington University',
+          'VP, Inspero Inc.', 'Female', '#awesome #MIT')";
 			mysql_query($query);
 
-$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender, tagString) VALUES('David Zhu', 1, 0, 'david@pik.com', '(617)425-2323', 'contact_pics/c4.png', 'MIT',
+$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
+          job, gender, tagString) VALUES('David Zhu', 1, 0, 'david@inspero.com', '(617)425-2323', 'contact_pics/c4.png', 'MIT',
           'McKinsey', 'Male', '#MIT #finance #econ')";
 			mysql_query($query);
 			
-$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender, tagString) VALUES('Max Wu', 1, 0, 'max@pik.com', '(617)425-2323', 'contact_pics/c6.png', 'MIT',
+$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
+          job, gender, tagString) VALUES('Max Wu', 1, 0, 'max@inspero.com', '(000)000-0000', 'contact_pics/c6.png', 'MIT',
           'Intel', 'Male', '#MIT #Intel')";
 			mysql_query($query);
 			
-$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender) VALUES('Tingting', 2, 0, 'tingting@pik.com', '(617)425-2323', 'contact_pics/c5.png', 'MIT',
+$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
+          job, gender) VALUES('Tingting', 2, 0, 'tingting@inspero.com', '(000)000-0001', 'contact_pics/c5.png', 'MIT',
           'McKinsey', 'Female')";
 			mysql_query($query);
 			
-$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, school,
-          work, gender) VALUES('David', 2, 0, 'david@pik.com', '(617)425-2323', 'contact_pics/c4.png', 'MIT',
+$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
+          job, gender) VALUES('David', 2, 0, 'david@pik.com', '(000)000-0002', 'contact_pics/c4.png', 'MIT',
           'McKinsey', 'Male')";
 
 $query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(1, 1, 'a', 1)";
