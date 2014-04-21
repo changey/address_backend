@@ -29,23 +29,39 @@ foreach ($contactDetails as $contact)
     $query = "SELECT * FROM contacts";
     $totalContactId = mysql_num_rows (mysql_query($query));
     
-    $query = "SELECT * FROM contacts WHERE tel='$tel' AND groupId = '$groupId'";
-    if (!mysql_num_rows(mysql_query($query))) {
-        $query = "INSERT INTO contacts (name, groupId, gender, tagString, university,
-    job, tel, email) VALUES('$name', '$groupId', '$gender', 
-    '$tagString', '$university', '$job', '$tel',
-    '$email')";
-        mysql_query($query);
-        
-    $totalContactId += 1;
-        
-        $query = "INSERT INTO favorites (contactId, groupId, user, favorites) 
-    VALUES('$totalContactId', '$groupId', '$user', 0)";
-        mysql_query($query);
-        
-    } 
-}
+    if ($tel != "") {
+        $query = "SELECT * FROM contacts WHERE tel='$tel' AND groupId = '$groupId'";
+    
+        if (!mysql_num_rows(mysql_query($query))) {
+            $query = "INSERT INTO contacts (name, groupId, gender, tagString, university,
+        job, tel, email) VALUES('$name', '$groupId', '$gender', 
+        '$tagString', '$university', '$job', '$tel',
+        '$email')";
+            mysql_query($query);
 
+            $totalContactId += 1;
+
+            $query = "INSERT INTO favorites (contactId, groupId, user, favorites) 
+        VALUES('$totalContactId', '$groupId', '$user', 0)";
+            mysql_query($query);
+        } 
+    }
+    else {
+        echo 'baba';
+        $query = "INSERT INTO contacts (name, groupId, gender, tagString, university,
+        job, tel, email) VALUES('$name', '$groupId', '$gender', 
+        '$tagString', '$university', '$job', '$tel',
+        '$email')";
+        mysql_query($query);
+
+        $totalContactId += 1;
+
+        $query = "INSERT INTO favorites (contactId, groupId, user, favorites) 
+        VALUES('$totalContactId', '$groupId', '$user', 0)";
+        mysql_query($query);
+
+    }
+}
 
 //$contacts = explode(',', $contactDetails);
 //$length = count($contacts);
