@@ -12,6 +12,11 @@ $query = '
         pass          VARCHAR(255)       NOT NULL,
         name          VARCHAR(255)       NOT NULL,
         email         VARCHAR(255)       NOT NULL,
+        tel           VARCHAR(255)       NOT NULL,
+        thumbnail     VARCHAR(255)       NOT NULL,
+        university    VARCHAR(255)       NOT NULL,
+        job           VARCHAR(255)       NOT NULL,
+        gender        VARCHAR(255)       NOT NULL,
 
         PRIMARY KEY (id)
     ) 
@@ -54,8 +59,9 @@ $query = '
         university        VARCHAR(255)      NOT NULL,
         job               VARCHAR(255)      NOT NULL,
         gender            VARCHAR(255)      NOT NULL,
-        tagString        VARCHAR(255)      NOT NULL,
-        hashtag          VARCHAR(255)      NOT NULL,
+        tagString         VARCHAR(255)      NOT NULL,
+        hashtag           VARCHAR(255)      NOT NULL,
+        memberName        VARCHAR(255)      NOT NULL,
  
         PRIMARY KEY (id)
     ) 
@@ -104,22 +110,6 @@ $query = '
 
         PRIMARY KEY (id)
     ) 
-    ENGINE=MyISAM';
-mysql_query($query, $con) or die (mysql_error($con));
-
-$query = 'DROP TABLE IF EXISTS message';
-mysql_query($query, $con) or die (mysql_error($con));
-//create the table
-$query = '
-        CREATE TABLE message (
-        id            INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
-        message       VARCHAR(255)       NOT NULL,
-        hashtag       VARCHAR(255)       NOT NULL,
-        time          VARCHAR(255)       NOT NULL,
-
-        PRIMARY KEY (id)
-    ) 
-	CHARACTER SET = utf8
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
 

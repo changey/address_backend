@@ -2,11 +2,23 @@
 
 include_once 'config.php';
 
-$query = "INSERT INTO rnmembers (user, pass) VALUES('(242)123-1231', 'c4ca4238a0b923820dcc509a6f75849b')";			
+$query = "INSERT INTO rnmembers (user, pass, name, email, tel, thumbnail, university,
+          job, gender) 
+          VALUES('(242)123-1231', 'c4ca4238a0b923820dcc509a6f75849b', 'David Zhu', 'david@inspero.com', '(123)321-3232'
+          , 'contact_pics/c4.png', 'MIT', 'CEO, Inspero Inc', 'Male')";			
             mysql_query($query);
 
-$query = "INSERT INTO rnmembers (user, pass) VALUES('a', 'c4ca4238a0b923820dcc509a6f75849b')";
+$query = "INSERT INTO rnmembers (user, pass, name, email, tel, thumbnail, university,
+          job, gender)
+          VALUES('15174662062', 'c4ca4238a0b923820dcc509a6f75849b', 'David Zhu', 'david@inspero.com', '(123)321-3232'
+          , 'contact_pics/c4.png', 'MIT', 'CEO, Inspero Inc', 'Male')";
             mysql_query($query);
+
+$query = "INSERT INTO rnmembers (user, pass, name, email, tel, thumbnail, university,
+          job, gender)
+          VALUES('a', 'c4ca4238a0b923820dcc509a6f75849b', 'David Zhu', 'david@inspero.com', '(123)321-3232'
+          , 'contact_pics/c4.png', 'MIT', 'CEO, Inspero Inc', 'Male')";
+mysql_query($query);
 			
 $query = "INSERT INTO groups (name, thumbnail, intro, tagString) 
 			VALUES('MIT', 'uploads/4.jpg', 'bar', '#MIT #college')";
@@ -34,6 +46,21 @@ $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbn
           job, gender, tagString) VALUES('Max Wu', 1, 0, 'max@inspero.com', '(000)000-0000', 'contact_pics/c6.png', 'MIT',
           'Intel', 'Male', '#MIT #Intel')";
 			mysql_query($query);
+
+$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
+          job, gender, tagString) VALUES('Tingting Sha', 0, 0, 'tingting@inspero.com', '(617)425-2323', 'contact_pics/c5.png', 'PhD, Washington University',
+          'VP, Inspero Inc.', 'Female', '#awesome #MIT')";
+mysql_query($query);
+
+$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
+          job, gender, tagString) VALUES('David Zhu', 0, 0, 'david@inspero.com', '(617)425-2323', 'contact_pics/c4.png', 'MIT',
+          'McKinsey', 'Male', '#MIT #finance #econ')";
+mysql_query($query);
+
+$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
+          job, gender, tagString) VALUES('Max Wu', 0, 0, 'max@inspero.com', '(000)000-0000', 'contact_pics/c6.png', 'MIT',
+          'Intel', 'Male', '#MIT #Intel')";
+mysql_query($query);
 			
 $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
           job, gender) VALUES('Tingting', 2, 0, 'tingting@inspero.com', '(000)000-0001', 'contact_pics/c5.png', 'MIT',
@@ -60,6 +87,24 @@ $query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(2, 
 mysql_query($query);
 
 $query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(3, 1, '(242)123-1231', 0)";
+mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(4, 0, '(242)123-1231', 1)";
+mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(5, 0, '(242)123-1231', 0)";
+mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(6, 0, '(242)123-1231', 0)";
+mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(1, 1, '15174662062', 1)";
+mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(2, 1, '15174662062', 0)";
+mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(3, 1, '15174662062', 0)";
 mysql_query($query);
 
 echo 'Data inserted successfully!';
