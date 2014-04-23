@@ -2,6 +2,18 @@
 
 include_once 'config.php';
 
+$query = "INSERT INTO admin (groupId, user, isAdmin, isMember) 
+          VALUES(1, '(242)123-1231', 1, 1)";
+mysql_query($query);
+
+$query = "INSERT INTO admin (groupId, user, isAdmin, isMember) 
+          VALUES(2, '(242)123-1231', 0, 1)";
+mysql_query($query);
+
+$query = "INSERT INTO admin (groupId, user, isAdmin, isMember) 
+          VALUES(3, '(242)123-1231', 0, 0)";
+mysql_query($query);
+
 $query = "INSERT INTO rnmembers (user, pass, name, email, tel, thumbnail, university,
           job, gender) 
           VALUES('(242)123-1231', 'c4ca4238a0b923820dcc509a6f75849b', 'David Zhu', 'david@inspero.com', '(123)321-3232'
@@ -61,7 +73,12 @@ $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbn
           job, gender, tagString) VALUES('Max Wu', 0, 0, 'max@inspero.com', '(000)000-0000', 'contact_pics/c6.png', 'MIT',
           'Intel', 'Male', '#MIT #Intel')";
 mysql_query($query);
-			
+
+$query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
+          job, gender) VALUES('David', 2, 0, 'david@inspero.com', '(000)000-0001', 'contact_pics/c4.png', 'MIT',
+          'McKinsey', 'Male')";
+mysql_query($query);
+
 $query = "INSERT INTO contacts (name, groupId, sectionNumber, email, tel, thumbnail, university,
           job, gender) VALUES('Tingting', 2, 0, 'tingting@inspero.com', '(000)000-0001', 'contact_pics/c5.png', 'MIT',
           'McKinsey', 'Female')";
@@ -87,6 +104,12 @@ $query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(2, 
 mysql_query($query);
 
 $query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(3, 1, '(242)123-1231', 0)";
+mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(7, 2, '(242)123-1231', 1)";
+mysql_query($query);
+
+$query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(8, 2, '(242)123-1231', 0)";
 mysql_query($query);
 
 $query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(4, 0, '(242)123-1231', 1)";

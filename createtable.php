@@ -91,6 +91,9 @@ $query = '
         id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
         groupId      INT               NOT NULL,
         userId       VARCHAR(255)      NOT NULL,
+        user         VARCHAR(255)      NOT NULL,
+        isAdmin      INT               NOT NULL,
+        isMember     INT               NOT NULL,
 
         PRIMARY KEY (id)
     ) 

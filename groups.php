@@ -6,7 +6,18 @@ $friend = $_GET['friend'];
 include_once 'config.php';
 
 //$query = "SELECT * FROM groups WHERE receiver='$user' ORDER BY id DESC";
-$query = "SELECT * FROM groups WHERE 1=1";
+$query = "SELECT * 
+          FROM groups 
+          INNER JOIN admin
+          ON groups.id = admin.groupId
+          WHERE admin.user = '$user'";
+
+//$query = "SELECT * 
+//          FROM contacts 
+//          INNER JOIN favorites
+//          ON contacts.id = favorites.contactId
+//          WHERE contacts.groupId='$groupId' AND favorites.user = '$user' ORDER BY favorites DESC, name";
+
 // if (mysql_num_rows(mysql_query($query)) == 0) {
 	// //$error = "That username already exists<br /><br />";
 	// echo 0;
@@ -21,7 +32,8 @@ $query = "SELECT * FROM groups WHERE 1=1";
 	while ($row = mysql_fetch_row($result)) {
 		//$user_id = $row[2];
 		//$data = array("id" => $row[0], "sender" => $row[1], "receiver" => $row[2], "url" => $row[3], "time" => $row[4], "captions" => $row[5]);
-		$data = array("id" => $row[0], "name" => urlencode($row[1]), "thumbnail" => $row[2], "tagString" => $row[5]);
+        $data = array("id" => $row[0], "name" => urlencode($row[1]), "thumbnail" => $row[2], "tagString" => $row[5],
+        "isAdmin" => $row[12]);
 		
 		array_push($stack, $data);
 		//echo $user_id;
