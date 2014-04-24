@@ -83,11 +83,11 @@ $query = '
     ENGINE=MyISAM';
 mysql_query($query, $con) or die (mysql_error($con));
 
-$query = 'DROP TABLE IF EXISTS admin';
+$query = 'DROP TABLE IF EXISTS roles';
 mysql_query($query, $con) or die (mysql_error($con));
 //create the table
 $query = '
-        CREATE TABLE admin (
+        CREATE TABLE roles (
         id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
         groupId      INT               NOT NULL,
         userId       VARCHAR(255)      NOT NULL,
@@ -110,6 +110,21 @@ $query = '
         groupId      INT               NOT NULL,
         user         VARCHAR(255)      NOT NULL,
         favorites    INT               NOT NULL,
+
+        PRIMARY KEY (id)
+    ) 
+    ENGINE=MyISAM';
+mysql_query($query, $con) or die (mysql_error($con));
+
+$query = 'DROP TABLE IF EXISTS applications';
+mysql_query($query, $con) or die (mysql_error($con));
+//create the table
+$query = '
+        CREATE TABLE applications (
+        id           INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT, 
+        groupId      INT               NOT NULL,
+        applicant    VARCHAR(255)      NOT NULL,
+        shown        INT               NOT NULL,
 
         PRIMARY KEY (id)
     ) 

@@ -8,9 +8,9 @@ include_once 'config.php';
 //$query = "SELECT * FROM groups WHERE receiver='$user' ORDER BY id DESC";
 $query = "SELECT * 
           FROM groups 
-          INNER JOIN admin
-          ON groups.id = admin.groupId
-          WHERE admin.user = '$user'";
+          INNER JOIN roles
+          ON groups.id = roles.groupId
+          WHERE roles.user = '$user'";
 
 //$query = "SELECT * 
 //          FROM contacts 

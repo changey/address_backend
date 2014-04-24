@@ -2,21 +2,21 @@
 
 include_once 'config.php';
 
-$query = "INSERT INTO admin (groupId, user, isAdmin, isMember) 
+$query = "INSERT INTO roles (groupId, user, isAdmin, isMember) 
           VALUES(1, '(242)123-1231', 1, 1)";
 mysql_query($query);
 
-$query = "INSERT INTO admin (groupId, user, isAdmin, isMember) 
-          VALUES(2, '(242)123-1231', 0, 1)";
+$query = "INSERT INTO roles (groupId, user, isAdmin, isMember) 
+          VALUES(2, '(242)123-1231', 1, 0)";
 mysql_query($query);
 
-$query = "INSERT INTO admin (groupId, user, isAdmin, isMember) 
+$query = "INSERT INTO roles (groupId, user, isAdmin, isMember) 
           VALUES(3, '(242)123-1231', 0, 0)";
 mysql_query($query);
 
 $query = "INSERT INTO rnmembers (user, pass, name, email, tel, thumbnail, university,
           job, gender) 
-          VALUES('(242)123-1231', 'c4ca4238a0b923820dcc509a6f75849b', 'David Zhu', 'david@inspero.com', '(123)321-3232'
+          VALUES('(242)123-1231', 'c4ca4238a0b923820dcc509a6f75849b', 'David Zhu', 'david@inspero.com', '(242)123-1231'
           , 'contact_pics/c4.png', 'MIT', 'CEO, Inspero Inc', 'Male')";			
             mysql_query($query);
 
@@ -30,6 +30,12 @@ $query = "INSERT INTO rnmembers (user, pass, name, email, tel, thumbnail, univer
           job, gender)
           VALUES('a', 'c4ca4238a0b923820dcc509a6f75849b', 'David Zhu', 'david@inspero.com', '(123)321-3232'
           , 'contact_pics/c4.png', 'MIT', 'CEO, Inspero Inc', 'Male')";
+mysql_query($query);
+
+$query = "INSERT INTO rnmembers (user, pass, name, email, tel, thumbnail, university,
+          job, gender)
+          VALUES('(000)123-1231', 'c4ca4238a0b923820dcc509a6f75849b', 'Pikachu', 'david@inspero.com', '(000)123-1231'
+          , '', 'MIT', 'CEO, Inspero Inc', 'Male')";
 mysql_query($query);
 			
 $query = "INSERT INTO groups (name, thumbnail, intro, tagString) 
@@ -128,6 +134,12 @@ $query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(2, 
 mysql_query($query);
 
 $query = "INSERT INTO favorites (contactId, groupId, user, favorites) VALUES(3, 1, '15174662062', 0)";
+mysql_query($query);
+
+$query = "INSERT INTO applications (groupId, applicant, shown) VALUES(3, '(000)123-1231', 0)";
+mysql_query($query);
+
+$query = "INSERT INTO applications (groupId, applicant, shown) VALUES(2, '(000)123-1231', 1)";
 mysql_query($query);
 
 echo 'Data inserted successfully!';

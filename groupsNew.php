@@ -7,9 +7,9 @@ include_once 'config.php';
 
 $query = "SELECT * 
           FROM groups 
-          INNER JOIN admin
-          ON groups.id = admin.groupId
-          WHERE admin.user = '$user'
+          INNER JOIN roles
+          ON groups.id = roles.groupId
+          WHERE roles.user = '$user'
           ORDER BY groups.id DESC";
 
 	$result = mysql_query($query) or die(mysql_error($con));
