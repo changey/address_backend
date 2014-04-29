@@ -12,6 +12,7 @@ $query = "SELECT *
           INNER JOIN favorites
           ON contacts.id = favorites.contactId
           WHERE contacts.groupId='$groupId' AND favorites.user = '$user' ORDER BY favorites DESC, name";
+
 // if (mysql_num_rows(mysql_query($query)) == 0) {
 	// //$error = "That username already exists<br /><br />";
 	// echo 0;
