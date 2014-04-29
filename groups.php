@@ -33,7 +33,7 @@ $query = "SELECT *
 		//$user_id = $row[2];
 		//$data = array("id" => $row[0], "sender" => $row[1], "receiver" => $row[2], "url" => $row[3], "time" => $row[4], "captions" => $row[5]);
         $data = array("id" => $row[0], "name" => urlencode($row[1]), "thumbnail" => $row[2], "tagString" => $row[5],
-        "isAdmin" => $row[12]);
+        "isAdmin" => $row[12], "isMember" => $row[13]);
 		
 		array_push($stack, $data);
 		//echo $user_id;

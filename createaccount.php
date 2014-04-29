@@ -139,7 +139,7 @@ mysql_query($query);
 $query = "INSERT INTO applications (groupId, applicant, shown) VALUES(3, '(000)123-1231', 0)";
 mysql_query($query);
 
-$query = "INSERT INTO applications (groupId, applicant, shown) VALUES(2, '(000)123-1231', 1)";
+$query = "INSERT INTO applications (groupId, applicant, shown) VALUES(2, '(242)123-1231', 1)";
 mysql_query($query);
 
 echo 'Data inserted successfully!';
